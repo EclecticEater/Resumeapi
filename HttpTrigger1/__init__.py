@@ -11,6 +11,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     connection_string = os.environ['CONNECTION_STRING']
     
+    print(connection_string)
+    
     table_name = 'Visitors'
 
 # Create the table client
