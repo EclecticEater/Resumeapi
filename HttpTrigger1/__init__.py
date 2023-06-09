@@ -9,7 +9,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     print('Python HTTP trigger function processed a request.')
     logging.info('Python HTTP trigger function processed a request.')
 
-    connection_string = ${{ secrets.AZURE_CREDENTIALS }}
+    connection_string = 'DefaultEndpointsProtocol=https;AccountName=jpopresume;' \
+                    'AccountKey=y43SKAYDTgr55Xqp1ohHPMxNeIGOe4aQfp6q53Hh85SQJSjfb2kbo2qM32KmV7A3zxmrwEnxBQGuACDbkBlH5g==;' \
+                    'TableEndpoint=https://jpopresume.table.cosmos.azure.com:443/;'
     table_name = 'Visitors'
 
 # Create the table client
