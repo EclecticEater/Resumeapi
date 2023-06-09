@@ -2,16 +2,15 @@ import logging
 from azure.data.tables import TableClient, UpdateMode
 from azure.core.exceptions import ResourceNotFoundError
 import azure.functions as func
-
+import os
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
     print('Python HTTP trigger function processed a request.')
     logging.info('Python HTTP trigger function processed a request.')
 
-    connection_string = 'DefaultEndpointsProtocol=https;AccountName=jpopresume;' \
-                    'AccountKey=y43SKAYDTgr55Xqp1ohHPMxNeIGOe4aQfp6q53Hh85SQJSjfb2kbo2qM32KmV7A3zxmrwEnxBQGuACDbkBlH5g==;' \
-                    'TableEndpoint=https://jpopresume.table.cosmos.azure.com:443/;'
+    connection_string = os.environ['CONNECTION_STRING']
+    
     table_name = 'Visitors'
 
 # Create the table client
