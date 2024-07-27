@@ -18,7 +18,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 # Create the table client
     table_client = TableClient.from_connection_string(connection_string, table_name)
 
-    # Retrieve all entities from the Visitors table
+    # test deployment
 
     entity = table_client.get_entity(partition_key='Visitors', row_key="0")
 
